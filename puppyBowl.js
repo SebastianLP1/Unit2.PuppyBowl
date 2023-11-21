@@ -4,6 +4,7 @@ const apiBaseUrl = `https://fsa-puppy-bowl.herokuapp.com/api/2310-FSA-ET-WEB-FT-
 
 const state = {
    allPlayers: []
+
 }
 
 const getAllPlayers = async () => {
@@ -13,12 +14,17 @@ const getAllPlayers = async () => {
    renderAllPlayers();
 }
 
-const getPlayerDetails = async(id) => {
-const response =  await fetch(`${apiBaseUrl}/players/${id}`)
-const responseJson = await response.json();
+const getPlayerDetails = async (id) => {
+   const response = await fetch(`${apiBaseUrl}/players/${id}`)
+   const responseJson = await response.json();
    const playerDetails = responseJson.data
-console.log(playerDetails)}
-
+   console.log(playerDetails)
+   renderDetails();
+   
+}
+const renderDetails = () => {
+   
+}
 
 const renderAllPlayers = () => {
 
@@ -42,3 +48,5 @@ const renderAllPlayers = () => {
 }
 
 getAllPlayers();
+renderDetails();
+
