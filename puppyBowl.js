@@ -19,6 +19,7 @@ const responseJson = await response.json();
    const playerDetails = responseJson.data
 console.log(playerDetails)}
 
+
 const renderAllPlayers = () => {
 
    playersNames = state.allPlayers.map((singlePlayers) => {
@@ -34,8 +35,9 @@ const renderAllPlayers = () => {
    listItems.forEach((playerListItem) => {
       playerListItem.addEventListener(`click`, (event) => {
          console.log(event.target.id)
-         
+         getPlayerDetails(event.target.id)
       });
+
    });
 }
 
